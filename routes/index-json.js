@@ -4,7 +4,6 @@ const express = require('express')
 const router = express.Router()
 const models = require('../models')
 
-/* GET home page. */
 let jsonArticles
 const re = /\d+/
 
@@ -26,7 +25,7 @@ router.get('/:offset/:limit', (req, res, next)=> {
 })
 
 router.get('/', (req, res, next)=> {
-  let limit = 30
+  const limit = 30
 
   models.bbs.findAll({
     limit: limit,
