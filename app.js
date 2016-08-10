@@ -11,7 +11,7 @@ var users = require('./routes/users');
 var indexJson = require('./routes/index-json');
 var idJson = require('./routes/id-json');
 var replyJson = require('./routes/reply-json');
-var replyJson = require('./routes/search-json');
+var searchJson = require('./routes/search-json');
 
 var app = express();
 
@@ -31,7 +31,7 @@ app.use('/', routes);
 app.use('/index.json', indexJson);
 app.use('/id.json', idJson);
 app.use('/reply.json', replyJson);
-app.use('/search.json', replyJson);
+app.use('/search.json', searchJson);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

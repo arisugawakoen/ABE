@@ -7,7 +7,7 @@ const models = require('../models')
 let jsonArticles
 
 router.get('/', (req, res, next)=> {
-  const searchQuery = req.param('q')
+  const searchQuery = req.query.q
 
   if (searchQuery) {
     const searchLike = `%${searchQuery}%`
