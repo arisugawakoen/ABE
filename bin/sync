@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var models = require('../models')
+models.sequelize.sync({
+  force: true
+}).then(function() {
+  return models.sequelize.close()
+})
+
