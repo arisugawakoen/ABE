@@ -1,9 +1,9 @@
 var models = require('../models')
 
 models.bbs.create({
-  text: 'fuck',
-  date: new Date(),
-  replyto: 1
+  text: 'sex',
+  date: Date(),
+  replyto: 2
 }).then(()=> {
   models.sequelize.close()
 })
