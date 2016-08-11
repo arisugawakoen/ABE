@@ -1,7 +1,7 @@
 <post-action>
   <form onsubmit={ add } class="ui form">
     <div class="field">
-    <textarea name="input" onkeyup={ edit } rows="3"></textarea>
+    <textarea name="input" onkeyup={ edit } rows="5"></textarea>
     <button disabled={ !text } class="fluid ui button">{ opts.button }</button>
     </div>
   </form>

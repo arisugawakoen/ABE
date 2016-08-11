@@ -38,4 +38,25 @@ router.get('/', (req, res, next)=> {
   })  
 })
 
+router.post('/', (req, res, next)=> {
+  let replyNo
+
+  if (re.test(req.body.replyto)) {
+    replyNo = req.body.replyto
+  } else {
+    replyNo = null
+  }
+
+  models.bbs.create({
+    text: req.body.text,
+    replyto: replyNo,
+    date: Date()
+  }).then(()=> {
+    res.send('ok')
+  }).catch((e)=> {
+    res.send('ng')
+    console.log(e)
+  })
+})
+
 module.exports = router;
