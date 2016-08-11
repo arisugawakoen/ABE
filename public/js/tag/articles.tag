@@ -33,7 +33,6 @@
       }).then(function(json) {
         self.results = JSON.parse(json)
       }).then(function() {
-        console.log('date: ', self.results)
         self.update()
       })
     }

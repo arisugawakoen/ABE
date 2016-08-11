@@ -4,10 +4,10 @@ const express = require('express')
 const router = express.Router()
 const models = require('../models')
 
-let jsonArticles
 const re = /\d+/
 
 router.get('/:offset/:limit', (req, res, next)=> {
+  let jsonArticles
   if (re.test(req.params.offset) && re.test(req.params.limit)) {
     models.bbs.findAll({
       offset: req.params.offset,
@@ -25,6 +25,7 @@ router.get('/:offset/:limit', (req, res, next)=> {
 })
 
 router.get('/', (req, res, next)=> {
+  let jsonArticles
   const limit = 30
 
   models.bbs.findAll({
