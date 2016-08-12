@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<title>検索</title>
+<link rel="stylesheet" type="text/css" href="./stylesheets/semantic/semantic.min.css">
+<script src="./stylesheets/semantic/semantic.min.js"></script>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=1">
+</head>
+<body>
+<div class="ui text container">
+<p></p>
+<search-page></search-page>
+</div>
+<script src="./js/fetch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/2.5.0/riot+compiler.min.js"></script>
+<script src="./js/moment.min.js"></script>
+
+<script type="riot/tag" src="./js/tag/search-page.tag"></script>
+<script type="riot/tag" src="./js/tag/search-action.tag"></script>
+<script type="riot/tag" src="./js/tag/raw2.tag"></script>
+
+<script type="text/javascript">
+  riot.mount('*')
+</script>
+</body>
+</html>
