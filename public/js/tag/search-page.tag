@@ -29,6 +29,9 @@
     </div>
   </div>
 
+  <a class="ui fluid button"
+    onclick="location.href = './article.html';">投稿一覧</a>
+
   results = []
   isResult = true
   var fetchUrl = ''

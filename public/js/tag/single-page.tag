@@ -4,7 +4,8 @@
   <single-article id="{ id }"></single-article>
   <reply-articles replyto="{ id }"></reply-articles>
   <post-action replyto="{ id }" button="返信を投稿"></post-action>
-  <a class="ui fluid button" onclick="location.href = './article.html';">投稿一覧</a>
+  <a class="ui fluid button"
+    onclick="location.href = './article.html';">投稿一覧</a>
 
   this.id = 1
   var self = this
