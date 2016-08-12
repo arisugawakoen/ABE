@@ -1,11 +1,11 @@
 <search-page>
 
-  <search-action></search-action>
+  <search-action query={ urlQuery }></search-action>
 
   <p></p>
 
   <div if={ results.length }>
-    <div class="ui small orange message" style="margin: 0;" each={ results }>
+    <div class="ui small orange message" each={ results }>
       <div class="content">
         <span class="description"><raw2 content="{ text }"/>
           <a if={ replyto } class="ui small label"
@@ -18,10 +18,30 @@
     </div>
   </div>
 
+  <div if={!isResult }>
+    <div class="ui small negative message">
+      <div class="header">
+        検索結果なし
+      </div>
+      <p>
+        別のキーワードで検索してください
+      </p>
+    </div>
+  </div>
+
   results = []
+  isResult = true
   var fetchUrl = ''
   var self = this
   el = riot.observable()
+
+  var hash = location.search.substring(1).split('&')
+  var vars = {}
+  hash.forEach(function(element) {
+    var z = element.split('=', 2)
+    vars[z[0]] = unescape(z[1])
+  })
+  urlQuery = vars['q']
 
   search = function(text) {
     var searchPage = 'http://' + location.host + fetchUrl + '/search.json'
@@ -34,9 +54,12 @@
     }).then(function(json) {
       self.results = JSON.parse(json)
     }).then(function() {
+      self.isResult = (self.results.length) ? true : false
       self.update()
     })
   }
+
+  if (urlQuery) search(urlQuery)
 
   <style scoped>
 

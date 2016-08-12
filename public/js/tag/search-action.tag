@@ -4,6 +4,8 @@
     <button disabled={ !text } class="ui button">検索</button>
   </form>
 
+    if (opts.query) this.input.value = opts.query
+
     edit(e) {
       this.text = e.target.value
     }
