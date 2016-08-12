@@ -48,7 +48,8 @@
   search = function(text) {
     var searchPage = 'http://' + location.host + fetchUrl + '/search.json'
     var searchUrl = new URL(searchPage)
-    searchUrl.searchParams.append('q', text)
+    var encodeQuery = encodeURIComponent(text)
+    searchUrl += '?q=' + encodeQuery
 
     fetch(searchUrl)
     .then(function(res) {
