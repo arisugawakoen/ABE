@@ -19,9 +19,15 @@
         return string.replace(/\n/g, '<br>')
       }
 
+      hashtag(string) {
+        return string.replace(/(\*[a-zA-Z0-9]+)/g,
+          '<a href="#" onclick="window.open(\'./search.html?q=$1\')">$1</a>')
+      }
+
       var cont = opts.content || ''
       cont = this.addAutoLink(cont)
       cont = this.nl2br(cont)
+      cont = this.hashtag(cont)
 
       this.root.innerHTML = cont
     })
