@@ -4,10 +4,11 @@ const express = require('express')
 const router = express.Router()
 const models = require('../models')
 
-let jsonArticles
 const re = /\d+/
 
 router.get('/:id', (req, res, next)=> {
+  let jsonArticles
+
   if (re.test(req.params.id)) {
     models.bbs.findAll({
       where: {

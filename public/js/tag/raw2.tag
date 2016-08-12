@@ -11,7 +11,8 @@
             } else {
               return normal;
             }
-        })
+          }
+        )
       }
 
       nl2br(string) {
@@ -21,6 +22,7 @@
       var cont = opts.content || ''
       cont = this.addAutoLink(cont)
       cont = this.nl2br(cont)
+
       this.root.innerHTML = cont
     })
 

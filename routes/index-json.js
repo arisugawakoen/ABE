@@ -8,6 +8,7 @@ const re = /\d+/
 
 router.get('/:offset/:limit', (req, res, next)=> {
   let jsonArticles
+
   if (re.test(req.params.offset) && re.test(req.params.limit)) {
     models.bbs.findAll({
       offset: req.params.offset,

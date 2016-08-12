@@ -3,10 +3,11 @@
     <div class="ui relaxed floating message">
       <div class="content">
         <span class="description"><raw2 content={ result.text }/>
-        <a if={ result.replyto } class="ui small label" href="./id.html#{ result.replyto }">{ result.replyto }への返信</a></span>
+          <a if={ result.replyto } class="ui small label"
+            href="./id.html#{ result.replyto }">{ result.replyto }への返信</a></span>
         <p class="metadata">
           <a href="./id.html#{ result.id }"><span>ID:{ result.id } </span>
-          { moment(result.date).format('YYYY-MM-DD HH:mm:ss') }</a>
+            { moment(result.date).format('YYYY-MM-DD HH:mm:ss') }</a>
         </p>
       </div>
     </div>
@@ -25,19 +26,17 @@
       }).then(function(json) {
         self.result = JSON.parse(json)
       }).then(function() {
-        self.update()
-      }).then(function() {
         el.trigger('parent', self.result.replyto)
+        self.update()
       })
     }
-
-    postId = opts.id || 1    
 
     el.on('url', function(id) {
       id = id || 1
       single(id)
     }) 
 
+    postId = opts.id || 1    
     single(postId)
 
   <style scoped>

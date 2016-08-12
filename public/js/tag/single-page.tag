@@ -19,7 +19,6 @@
   riot.route.start(true)
 
   reply = function(text, replyto) {
-    console.log('reply.replyto: ', replyto)
     fetch(fetchUrl + 'index.json', {
       method: 'POST',
       headers: {

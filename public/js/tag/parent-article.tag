@@ -1,15 +1,16 @@
 <parent-article>
   <div if={ parentArticle.id }>
-  <div class="ui small yellow message">
-    <div class="content">
-      <span class="description"><raw2 content="{ parentArticle.text }"/>
-      <a if={ parentArticle.replyto } class="ui small label" href="./id.html#{ parentArticle.replyto }">{ parentArticle.replyto }への返信</a></span>
-      <p class="metadata">
-        <a href="./id.html#{ parentArticle.id }"><span>ID:{ parentArticle.id } </span>
-        { moment(parentArticle.date).format('YYYY-MM-DD HH:mm:ss') }</a>
-      </p>
+    <div class="ui small yellow message">
+      <div class="content">
+        <span class="description"><raw2 content="{ parentArticle.text }"/>
+          <a if={ parentArticle.replyto } class="ui small label"
+            href="./id.html#{ parentArticle.replyto }">{ parentArticle.replyto }への返信</a></span>
+        <p class="metadata">
+          <a href="./id.html#{ parentArticle.id }"><span>ID:{ parentArticle.id } </span>
+          { moment(parentArticle.date).format('YYYY-MM-DD HH:mm:ss') }</a>
+        </p>
+      </div>
     </div>
-  </div>
   </div>
 
     this.parentArticle = new Object()
@@ -33,7 +34,6 @@
     }
 
     this.on('mount', function() {
-      console.log(self.parentArticle.id)
       parentReader(self.parentArticle.id)
     })
 

@@ -3,10 +3,11 @@
     <div class="ui small olive message" style="margin: 0;" each={ results }>
       <div class="content">
         <span class="description"><raw2 content="{ text }"/>
-        <a if={ replyto } class="ui small label" href="./id.html#{ replyto }">{ replyto }への返信</a></span>
+          <a if={ replyto } class="ui small label"
+            href="./id.html#{ replyto }">{ replyto }への返信</a></span>
         <p class="metadata">
           <a href="./id.html#{ id }"><span>ID:{ id } </span>
-          { moment(date).format('YYYY-MM-DD HH:mm:ss') }</a>
+            { moment(date).format('YYYY-MM-DD HH:mm:ss') }</a>
         </p>
       </div>
     </div>

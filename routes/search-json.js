@@ -4,9 +4,8 @@ const express = require('express')
 const router = express.Router()
 const models = require('../models')
 
-let jsonArticles
-
 router.get('/', (req, res, next)=> {
+  let jsonArticles
   const searchQuery = req.query.q
 
   if (searchQuery) {

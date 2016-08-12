@@ -4,10 +4,11 @@ const express = require('express')
 const router = express.Router()
 const models = require('../models')
 
-let jsonArticle
 const re = /\d+/
 
 router.get('/:id', (req, res, next)=> {
+  let jsonArticle
+
   if (re.test(req.params.id)) {
     models.bbs.findById(req.params.id, {
       attributes: ['id', 'text', 'replyto', 'date']

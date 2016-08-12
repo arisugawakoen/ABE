@@ -3,12 +3,13 @@
     <div each={ results }>
       <div class="ui link relaxed segment" style="margin-bottom: 0.8em;">
         <div class="content">
-        <span class="description"><raw2 content="{ text }"/>
-        <a if={ replyto } class="ui small label" href="./id.html#{ replyto }">{ replyto }への返信</a></span>
-        <p class="metadata">
-          <a href="./id.html#{ id }"><span>ID:{ id } </span>
-          { moment(date).format('YYYY-MM-DD HH:mm:ss') }</a>
-        </p>
+          <span class="description"><raw2 content="{ text }"/>
+            <a if={ replyto } class="ui small label"
+              href="./id.html#{ replyto }">{ replyto }への返信</a></span>
+          <p class="metadata">
+            <a href="./id.html#{ id }"><span>ID:{ id } </span>
+            { moment(date).format('YYYY-MM-DD HH:mm:ss') }</a>
+          </p>
         </div>
       </div>
     </div>
@@ -16,17 +17,17 @@
   </div>
 
     this.results = []
+    var fetchUrl = './'
     var offset = 0
     var limit = 30
     var limitMax = 3000
     var addNumber = 30
-    var interval = 1000
-    var fetchUrl = './'
+    var interval = 10000
     var self = this
 
     reloader = function(offset, limit) {
-      offset = '/' + offset || ''
-      limit = '/' + limit || ''
+      offset = '/' + offset || '/0'
+      limit = '/' + limit || '/30'
       fetch(fetchUrl + 'index.json' + offset + limit)
       .then(function(res) {
         return res.json()
@@ -38,7 +39,7 @@
     }
 
     reply = function(text, replyto) {
-      fetch(fetchUrl + 'index.json',{
+      fetch(fetchUrl + 'index.json', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -75,8 +76,12 @@
       reloader(offset, limit)
     }
 
+    intervalReloader() {
+      reloader(offset, limit)
+    }
+
     reloader(offset, limit)
-    setInterval(reloader(offset, limit), interval)
+    setInterval(this.intervalReloader, interval)
 
   <style scoped>
 
