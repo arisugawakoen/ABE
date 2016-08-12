@@ -1,5 +1,5 @@
 <single-article>
-  <div if={ result }>
+  <div if={ result.text.length }>
     <div class="ui relaxed floating message">
       <div class="content">
         <span class="description"><raw2 content={ result.text }/>
@@ -14,13 +14,12 @@
   </div>
 
     this.result = new Object()
-    var self = this
     var postId = 1
     var fetchUrl = './'
+    var self = this
 
     single = function(id) {
-      id = '/' + id || 1
-      fetch(fetchUrl + 'id.json' + id)
+      fetch(fetchUrl + 'id.json/' + id)
       .then(function(res) {
         return res.json()
       }).then(function(json) {
