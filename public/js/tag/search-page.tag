@@ -33,7 +33,6 @@
   isResult = true
   var fetchUrl = ''
   var self = this
-  el = riot.observable()
 
   var hash = location.search.substring(1).split('&')
   var vars = {}
