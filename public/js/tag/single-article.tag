@@ -25,6 +25,7 @@
       }).then(function(json) {
         self.result = JSON.parse(json)
       }).then(function() {
+        if (!self.result) self.result = new Object()
         el.trigger('parent', self.result.replyto)
         self.update()
       })
