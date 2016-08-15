@@ -220,10 +220,10 @@ riot.tag2('search-page', '<search-action query="{urlQuery}"></search-action> <p>
   urlQuery = vars['q']
 
   search = function(text) {
-    var searchPage = 'http://' + location.host + fetchUrl + '/search.json'
+    var searchPage = ['http://', location.host, fetchUrl, '/search.json'].join("")
     var searchUrl = new URL(searchPage)
     var encodeQuery = encodeURIComponent(text)
-    searchUrl += '?q=' + encodeQuery
+    searchUrl = [searchUrl, '?q=', encodeQuery].join("")
 
     fetch(searchUrl)
     .then(function(res) {
