@@ -215,7 +215,7 @@ riot.tag2('search-page', '<search-action query="{urlQuery}"></search-action> <p>
   var vars = {}
   hash.forEach(function(element) {
     var z = element.split('=', 2)
-    vars[z[0]] = unescape(z[1])
+    vars[z[0]] = decodeURIComponent(z[1])
   })
   urlQuery = vars['q']
 
