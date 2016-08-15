@@ -27,6 +27,8 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 public/stylesheets/semantic/*
+public/js/tag.min.js
+public/js/tag/tag.js
 
 # Dependency directories
 node_modules
