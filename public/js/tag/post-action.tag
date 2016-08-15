@@ -14,7 +14,7 @@
     add(e) {
       var ma = null
       var matchAngle = this.text.match(/<<(\d+)/);
-      if (matchAngle) ma = matchAngle[1]
+      if (matchAngle && matchAngle[1] < 100000000) ma = matchAngle[1]
 
       var replyto = opts.replyto || ma || null
       
