@@ -26,6 +26,7 @@ coverage
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
+public/favicon.ico
 public/stylesheets/semantic/*
 public/js/tag.min.js
 public/js/tag/tag.js
