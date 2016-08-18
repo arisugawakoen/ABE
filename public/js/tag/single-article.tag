@@ -19,16 +19,21 @@
     var self = this
 
     single = function(id) {
-      fetch(fetchUrl + 'id.json/' + id)
-      .then(function(res) {
-        return res.json()
-      }).then(function(json) {
-        self.result = JSON.parse(json)
-      }).then(function() {
-        if (!self.result) self.result = new Object()
-        el.trigger('parent', self.result.replyto)
+      if (id !== 0) {
+        fetch(fetchUrl + 'id.json/' + id)
+        .then(function(res) {
+          return res.json()
+        }).then(function(json) {
+          self.result = JSON.parse(json)
+        }).then(function() {
+          if (!self.result) self.result = new Object()
+          el.trigger('parent', self.result.replyto)
+          self.update()
+        })
+      } else {
+        self.result = new Object()
         self.update()
-      })
+      }
     }
 
     el.on('url', function(id) {
@@ -36,7 +41,7 @@
       single(id)
     }) 
 
-    postId = opts.id || 1    
+    postId = opts.id 
     single(postId)
 
   <style scoped>

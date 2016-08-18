@@ -7,7 +7,7 @@
   <a class="ui fluid button"
     onclick="location.href = './article.html';">投稿一覧</a>
 
-  this.id = 1
+  this.id = 0
   var self = this
   var fetchUrl = './'
   el = riot.observable()
