@@ -14,7 +14,7 @@
   </div>
 
     this.result = new Object()
-    var postId = 1
+    var postId = 0
     var fetchUrl = './'
     var self = this
 
@@ -37,7 +37,7 @@
     }
 
     el.on('url', function(id) {
-      id = id || 1
+      id = id || 0
       single(id)
     }) 
 
