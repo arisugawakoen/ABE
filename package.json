@@ -5,6 +5,7 @@
   "scripts": {
     "start": "PORT=80 node ./bin/www",
     "cluster": "PORT=80 node cluster",
+    "h2ocluster": "PORT=3000 node cluster",
     "sync" : "node ./bin/sync"
   },
   "dependencies": {

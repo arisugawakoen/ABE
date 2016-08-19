@@ -1,0 +1,13 @@
+user: www-data
+pid-file: /var/run/h2o/h2o.pid
+access-log: /var/log/h2o/access.log
+error-log: /var/log/h2o/error.log
+
+hosts:
+  "*":
+    listen:
+      port: 80
+    paths:
+      /:
+        file.dir: /var/www/no/
+        proxy.reverse.url: http://127.0.0.1:3000/    
