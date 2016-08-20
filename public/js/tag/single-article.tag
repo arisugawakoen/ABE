@@ -48,11 +48,11 @@
 
     .content .metadata a {
       color: rgba(0,0,0,.6);
-      font-size: 95%;
+      font-size: 90%;
     }
 
     .content .description {
-      font-size: 115%;
+      font-size: 105%;
       line-height: 2;
     }
 
