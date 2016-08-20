@@ -1,6 +1,6 @@
 <single-article>
   <div if={ result.text.length }>
-    <div class="ui relaxed floating message">
+    <div class="ui relaxed violet message">
       <div class="content">
         <span class="description"><raw2 content={ result.text }/>
           <a if={ result.replyto } class="ui small label"
@@ -52,8 +52,9 @@
     }
 
     .content .description {
-      font-size: 105%;
+      font-size: 110%;
       line-height: 2;
+      color: rgba(0,0,0,.87);
     }
 
   </style>
