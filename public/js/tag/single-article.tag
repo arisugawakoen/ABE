@@ -52,7 +52,7 @@
     }
 
     .content .description {
-      font-size: 110%;
+      font-size: 105%;
       line-height: 2;
       color: rgba(0,0,0,.87);
     }
