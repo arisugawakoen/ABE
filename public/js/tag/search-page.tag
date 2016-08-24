@@ -29,8 +29,7 @@
     </div>
   </div>
 
-  <a class="ui fluid button"
-    onclick="location.href = './article.html';">投稿一覧</a>
+  <a class="ui fluid button" href="./article.html">投稿一覧</a>
 
   results = []
   isResult = true
