@@ -21,6 +21,8 @@ router.get('/', (req, res, next)=> {
       jsonArticles = JSON.stringify(articles)
     }).then(()=> {
       res.json(jsonArticles)
+    }).catch((e)=> {
+      if (e) res.json(e)
     })
   } else {
     res.send('query nothing')

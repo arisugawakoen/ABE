@@ -16,6 +16,8 @@ router.get('/:id', (req, res, next)=> {
       jsonArticle = JSON.stringify(article)
     }).then(()=> {
       res.json(jsonArticle)
+    }).catch((e)=> {
+      if (e) res.json(e)
     })
   } else {
     res.send('not decimal')
