@@ -22,7 +22,7 @@ router.get('/', (req, res, next)=> {
     }).then(()=> {
       res.json(jsonArticles)
     }).catch((e)=> {
-      if (e) res.json(e)
+      if(e) res.json(e)
     })
   } else {
     res.send('query nothing')
