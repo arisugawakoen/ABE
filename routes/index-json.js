@@ -42,12 +42,7 @@ router.get('/', (req, res, next)=> {
 
 router.post('/', (req, res, next)=> {
   let replyNo
-
-  if (re.test(req.body.replyto)) {
-    replyNo = req.body.replyto
-  } else {
-    replyNo = null
-  }
+  replyNo = (re.test(req.body.replyto)) ? req.body.replyto : null
 
   models.bbs.create({
     text: req.body.text,
