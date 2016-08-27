@@ -34,6 +34,8 @@ app.use('/search.json', searchJson);
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
+  res.status(err.status);
+  res.end('404: Not Found. The Requested URL ' + req.path + ' was not found on this server.' );
   next(err);
 });
 
@@ -60,6 +62,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
