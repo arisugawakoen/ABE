@@ -4,7 +4,7 @@ const express = require('express')
 const router = express.Router()
 const models = require('../models')
 
-router.get('/', (req, res, next)=> {
+router.get('/', (req, res, next) => {
   let jsonArticles
   const searchQuery = req.query.q
 
@@ -17,11 +17,11 @@ router.get('/', (req, res, next)=> {
       },
       order: 'id DESC',
       attributes: ['id', 'text', 'replyto', 'date']
-    }).then((articles)=> {
+    }).then((articles) => {
       jsonArticles = JSON.stringify(articles)
-    }).then(()=> {
+    }).then(() => {
       res.json(jsonArticles)
-    }).catch((e)=> {
+    }).catch((e) => {
       if(e) res.json(e)
     })
   } else {

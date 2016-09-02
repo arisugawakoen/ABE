@@ -6,17 +6,17 @@ const models = require('../models')
 
 const re = /\d+/
 
-router.get('/:id', (req, res, next)=> {
+router.get('/:id', (req, res, next) => {
   let jsonArticle
 
   if (re.test(req.params.id)) {
     models.bbs.findById(req.params.id, {
       attributes: ['id', 'text', 'replyto', 'date']
-    }).then((article)=> {
+    }).then((article) => {
       jsonArticle = JSON.stringify(article)
-    }).then(()=> {
+    }).then(() => {
       res.json(jsonArticle)
-    }).catch((e)=> {
+    }).catch((e) => {
       if(e) res.json(e)
     })
   } else {

@@ -6,7 +6,7 @@ const models = require('../models')
 
 const re = /\d+/
 
-router.get('/:id', (req, res, next)=> {
+router.get('/:id', (req, res, next) => {
   let jsonArticles
 
   if (re.test(req.params.id)) {
@@ -15,11 +15,11 @@ router.get('/:id', (req, res, next)=> {
         replyto: req.params.id
       },
       attributes: ['id', 'text', 'replyto', 'date']
-    }).then((articles)=> {
+    }).then((articles) => {
       jsonArticles = JSON.stringify(articles)
-    }).then(()=> {
+    }).then(() => {
       res.json(jsonArticles)
-    }).catch((e)=> {
+    }).catch((e) => {
       if(e) res.json(e)
     })
   } else {
