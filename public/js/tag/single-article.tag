@@ -1,6 +1,6 @@
 <single-article>
   <div if={ result.text.length }>
-    <div class="ui relaxed teal message">
+    <div class="ui relaxed info message">
       <div class="content">
         <span class="description"><raw2 content={ result.text }/>
           <a if={ result.replyto } class="ui small label"
