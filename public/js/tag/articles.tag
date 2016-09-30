@@ -108,6 +108,10 @@
       color: rgba(255,255,255,.6);
     }
 
+    .inverted .content .description a {
+      color: rgba(255,255,255,.8);
+    }
+
     .content .description {
       font-size: 105%;
       line-height: 2;
