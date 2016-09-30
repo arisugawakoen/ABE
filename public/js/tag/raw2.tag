@@ -29,7 +29,7 @@
       }
 
       var cont = opts.content || ''
-      cont = this.amp2amp(cont)
+//      cont = this.amp2amp(cont)
       cont = this.addAutoLink(cont)
       cont = this.nl2br(cont)
       cont = this.hashtag(cont)
