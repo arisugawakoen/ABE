@@ -8,7 +8,7 @@
 
       addAutoLink(string) {
         return string.replace(
-          /((https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+))/gi,
+          /(http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?)/gi,
           function (all, url, normal) {
             if (url) {
               return '<a href="' + url + '" target="_blank">' + url + '</a>'
