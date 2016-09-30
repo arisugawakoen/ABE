@@ -6,8 +6,8 @@
         box-shadow: 0 0 1px { backgroundColor } inset;"></textarea>
       <a class="fluid ui button" if={ !toggle }
        onclick={ accordion }>背景色選択</a>
-      <div class="ui attached bottom center aligned segment" if={ toggle }
-       onclick={ color }>
+      <div class="ui attached bottom center aligned segment"
+       style="border-radius: .28571429rem;" if={ toggle } onclick={ color }>
         <a class="ui red circular label" title="red"></a>
         <a class="ui orange circular label" title="orange"></a>
         <a class="ui yellow circular label" title="yellow"></a>
