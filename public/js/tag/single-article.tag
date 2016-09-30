@@ -7,7 +7,7 @@
             href="./id.html#{ result.replyto }">{ result.replyto }への返信</a></span>
         <p class="metadata">
           <a href="./id.html#{ result.id }"><span>ID:{ result.id } </span>
-            { moment(result.date).format('YYYY-MM-DD HH:mm:ss') }</a>
+            { moment(result.date).format('YYYY-MM-DD dddd HH:mm:ss') }</a>
         </p>
       </div>
     </div>

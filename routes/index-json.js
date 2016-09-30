@@ -13,7 +13,7 @@ function findAllJson(res, Offset, Limit) {
     offset: Offset,
     limit: Limit,
     order: 'id DESC',
-    attributes: ['id', 'text', 'replyto', 'date']
+    attributes: ['id', 'text', 'replyto', 'date', 'color']
   }).then((articles) => {
     jsonArticles = JSON.stringify(articles)
   }).then(() => {
@@ -44,7 +44,8 @@ router.post('/', (req, res, next) => {
   models.bbs.create({
     text: req.body.text,
     replyto: replyNo,
-    date: Date()
+    date: Date(),
+    color: req.body.color
   }).then(() => {
     res.send('ok')
   }).catch((e) => {

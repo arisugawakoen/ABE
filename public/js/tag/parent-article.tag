@@ -7,7 +7,7 @@
             href="./id.html#{ parentArticle.replyto }">{ parentArticle.replyto }への返信</a></span>
         <p class="metadata">
           <a href="./id.html#{ parentArticle.id }"><span>ID:{ parentArticle.id } </span>
-          { moment(parentArticle.date).format('YYYY-MM-DD HH:mm:ss') }</a>
+          { moment(parentArticle.date).format('YYYY-MM-DD dddd HH:mm:ss') }</a>
         </p>
       </div>
     </div>

@@ -16,6 +16,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     date: {
       type: DataTypes.DATE,
+    },
+    color: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   }, {
     classMethods: {

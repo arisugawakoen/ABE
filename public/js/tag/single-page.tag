@@ -18,7 +18,7 @@
 
   riot.route.start(true)
 
-  reply = function(text, replyto) {
+  reply = function(text, replyto, color) {
     fetch(fetchUrl + 'index.json', {
       method: 'POST',
       headers: {
@@ -27,7 +27,8 @@
       },
       body: JSON.stringify({
         text: self.escape_html(text),
-        replyto: replyto
+        replyto: replyto,
+        color: self.escape_html(color)
       })
     }).then(function() {
       el.trigger('url', self.id)

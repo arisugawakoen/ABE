@@ -1,14 +1,27 @@
 <articles>
   <div if={ results.length }>
     <div each={ results }>
-      <div class="ui link relaxed segment" style="margin-bottom: 0.8em;">
+      <div class="ui { color } inverted link relaxed segment"
+       style="margin-bottom: 0.8em;" if={ color } >
         <div class="content">
           <span class="description"><raw2 content="{ text }"/>
             <a if={ replyto } class="ui small label"
               href="./id.html#{ replyto }">{ replyto }への返信</a></span>
           <p class="metadata">
             <a href="./id.html#{ id }"><span>ID:{ id } </span>
-            { moment(date).format('YYYY-MM-DD HH:mm:ss') }</a>
+            { moment(date).format('YYYY-MM-DD dddd HH:mm:ss') }</a>
+          </p>
+        </div>
+      </div>
+      <div class="ui link relaxed segment"
+       style="margin-bottom: 0.8em;" if={ !color }>
+        <div class="content">
+          <span class="description"><raw2 content="{ text }"/>
+            <a if={ replyto } class="ui small label"
+              href="./id.html#{ replyto }">{ replyto }への返信</a></span>
+          <p class="metadata">
+            <a href="./id.html#{ id }"><span>ID:{ id } </span>
+            { moment(date).format('YYYY-MM-DD dddd HH:mm:ss') }</a>
           </p>
         </div>
       </div>
@@ -38,7 +51,7 @@
       })
     }
 
-    reply = function(text, replyto) {
+    reply = function(text, replyto, color) {
       fetch(fetchUrl + 'index.json', {
         method: 'POST',
         headers: {
@@ -47,7 +60,8 @@
         },
         body: JSON.stringify({
           text: self.escape_html(text),
-          replyto: replyto
+          replyto: replyto,
+          color: self.escape_html(color)
         })
       }).then(function() {
         reloader(offset, limit)
@@ -88,6 +102,10 @@
     .content .metadata a {
       color: rgba(0,0,0,.6);
       font-size: 85%;
+    }
+
+    .inverted .content .metadata a {
+      color: rgba(255,255,255,.6);
     }
 
     .content .description {
