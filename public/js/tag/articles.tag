@@ -27,12 +27,12 @@
     <a onclick={ additionalReading } class="ui fluid button">追加読み込み</a>
   </div>
 
-    this.results = []
+    var results = []
     var fetchUrl = './'
     var offset = 0
-    var limit = 30
-    var limitMax = 3000
-    var addNumber = 30
+    var limit = 50
+    var limitMax = 30000
+    var addNumber = 50
     var interval = 10000
     var self = this
 
