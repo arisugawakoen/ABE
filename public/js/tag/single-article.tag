@@ -46,6 +46,10 @@
 
   <style scoped>
 
+    .content {
+      word-wrap:break-word;
+    }
+
     .content .metadata a {
       color: rgba(0,0,0,.6);
       font-size: 90%;
