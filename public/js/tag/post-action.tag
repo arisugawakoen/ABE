@@ -1,13 +1,12 @@
 <post-action>
   <form onsubmit={ add } class="ui form">
     <div class="field">
-      <textarea name="input" onkeyup={ edit } rows="4"
-       style="border-color: { backgroundColor };
-        box-shadow: 0 0 1px { backgroundColor } inset;"></textarea>
+      <textarea name="input" onkeyup={ edit } rows="4" style="border:none; 
+        box-shadow: 0 0 2px { backgroundColor } inset;"></textarea>
       <a class="fluid ui button" if={ !toggle }
        onclick={ accordion }>背景色選択</a>
       <div class="ui attached bottom center aligned segment"
-       style="border-radius: .28571429rem;" if={ toggle } onclick={ color }>
+       style="border-radius: .4rem;" if={ toggle } onclick={ color }>
         <a class="ui red circular label" title="red"></a>
         <a class="ui orange circular label" title="orange"></a>
         <a class="ui yellow circular label" title="yellow"></a>
