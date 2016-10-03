@@ -5,7 +5,9 @@
        style="margin-bottom: 0.8em;" if={ color } >
         <div class="content">
           <span class="description"><raw2 content="{ text }"></raw2>
-            <a if={ replyto } class="ui small label" style="color: rgba(0,0,0,.6);" href="./id.html#{ replyto }">{ replyto }への返信</a></span>
+            <a if={ replyto } class="ui small label"
+             style="color: rgba(0,0,0,.6);"
+             href="./id.html#{ replyto }">{ replyto }への返信</a></span>
           <p class="metadata">
             <a href="./id.html#{ id }"><span>ID:{ id } </span>
             { moment(date).format('YYYY-MM-DD dddd HH:mm:ss') }</a>
@@ -16,7 +18,8 @@
        style="margin-bottom: 0.8em;" if={ !color }>
         <div class="content">
           <span class="description"><raw2 content="{ text }"></raw2>
-            <a if={ replyto } class="ui small label" href="./id.html#{ replyto }">{ replyto }への返信</a></span>
+            <a if={ replyto } class="ui small label"
+             href="./id.html#{ replyto }">{ replyto }への返信</a></span>
           <p class="metadata">
             <a href="./id.html#{ id }"><span>ID:{ id } </span>
             { moment(date).format('YYYY-MM-DD dddd HH:mm:ss') }</a>

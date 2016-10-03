@@ -31,37 +31,54 @@
 
   <a class="ui fluid button" href="./article.html">投稿一覧</a>
 
-  results = []
-  isResult = true
-  var fetchUrl = ''
-  var self = this
+    escape_html(string) {
+      if(typeof string !== 'string') {
+        return string;
+      }
+      return string.replace(/[&'`"<>]/g, function(match) {
+        return {
+          '&': '&amp;',
+          "'": '&#x27;',
+          '`': '&#x60;',
+          '"': '&quot;',
+          '<': '&lt;',
+          '>': '&gt;',
+        }[match]
+      })
+    }
 
-  var hash = location.search.substring(1).split('&')
-  var vars = {}
-  hash.forEach(function(element) {
-    var z = element.split('=', 2)
-    vars[z[0]] = decodeURIComponent(z[1])
-  })
-  urlQuery = vars['q']
+    results = []
+    isResult = true
+    var fetchUrl = ''
+    var hash = location.search.substring(1).split('&')
+    var vars = {}
+    var self = this
 
-  search = function(text) {
-    var searchPage = ['http://', location.host, fetchUrl, '/search.json'].join("")
-    var searchUrl = new URL(searchPage)
-    var encodeQuery = encodeURIComponent(text)
-    searchUrl = [searchUrl, '?q=', encodeQuery].join("")
-
-    fetch(searchUrl)
-    .then(function(res) {
-      return res.json()
-    }).then(function(json) {
-      self.results = JSON.parse(json)
-    }).then(function() {
-      self.isResult = (self.results.length) ? true : false
-      self.update()
+    hash.forEach(function(element) {
+      var z = element.split('=', 2)
+      vars[z[0]] = decodeURIComponent(z[1])
     })
-  }
 
-  if (urlQuery) search(urlQuery)
+    urlQuery = this.escape_html(vars['q'])
+
+    search = function(text) {
+      var searchPage = ['http://', location.host, fetchUrl, '/search.json'].join("")
+      var searchUrl = new URL(searchPage)
+      var encodeQuery = encodeURIComponent(text)
+      searchUrl = [searchUrl, '?q=', encodeQuery].join("")
+
+      fetch(searchUrl)
+      .then(function(res) {
+        return res.json()
+      }).then(function(json) {
+        self.results = JSON.parse(json)
+      }).then(function() {
+        self.isResult = (self.results.length) ? true : false
+        self.update()
+      })
+    }
+
+    if (urlQuery) search(urlQuery)
 
   <style scoped>
 
