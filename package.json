@@ -1,7 +1,12 @@
 {
-  "name": "jsontest",
-  "version": "0.0.0",
-  "private": true,
+  "name": "ABE",
+  "version": "0.1.0",
+  "description": "Ancient Bulletin-board Experience",
+  "keyword": "node.js Express riot.js BBS",
+  "homepage": "http://aliceriverpark.pw",
+  "license": "GPL-3.0",
+  "author": "arisugawakoen <@arisugawakoen>(http://aliceriverpark.pw)",
+  "private": false,
   "scripts": {
     "start": "PORT=80 node ./bin/www",
     "cluster": "PORT=80 node cluster",
