@@ -14,6 +14,7 @@ Ancient Bulletin-board Experience
 Node.jsが動作する環境が必要です。  
 デフォルトのRDBはPostgreSQLですが、少しの修正でMySQL/MariaDBでも動作すると思います。  
 [実働環境](http://aliceriverpark.pw/article.html)は[h2o](https://h2o.examp1e.net)をリバースプロキシとしていますが、動作させるだけなら特に必須ではありません。  
+public/stylesheets/semanticを作成してCSSフレームワーク[Semantic UI](http://semantic-ui.com)を設置してください。
 
 ## Usage
 
